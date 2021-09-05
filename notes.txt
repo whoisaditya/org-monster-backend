@@ -1,0 +1,14 @@
+A backend wich stores User Id from chrome storate
+Stores a Particular organisation in the data based
+When the user adds, deletes or updates the Organization
+Use the If-Else and time stamp funstions
+
+Routes:
+/feed/:id
+
+
+Review 1:
+1. Setup database 
+2. Create Models
+3. Add and Remove Route + Documentation
+4. In seperate Files
