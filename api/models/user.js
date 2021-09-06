@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const userSchema = Schema({
-    _id: mongoose.Schema.Types.ObjectId,
+    //_id: mongoose.Schema.Types.ObjectId,
     user_id: {type: String},
     orgs: [{ type: String }],
     //n: {type: Number}

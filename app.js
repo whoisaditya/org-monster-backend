@@ -39,3 +39,5 @@ app.use((req, res, next) => {
 });
 
 app.use("/user", require("./api/routers/user"));
+
+app.listen(3000);
