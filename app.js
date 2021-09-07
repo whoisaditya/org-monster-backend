@@ -8,9 +8,8 @@ app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 app.use(express.json())
 
 const mongoose = require('mongoose');
-const path = require('path');
+
 const dotenv = require('dotenv');
-const jwt = require('jsonwebtoken');
 
 dotenv.config();
 

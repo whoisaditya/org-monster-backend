@@ -1,14 +1,32 @@
 A backend wich stores User Id from chrome storate
 Stores a Particular organisation in the data based
 When the user adds, deletes or updates the Organization
-Use the If-Else and time stamp funstions
+Use the If-Else and time stamp functions
 
 Routes:
 /feed/:id
 
 
-Review 1:
+Review 1:(done)
 1. Setup database 
 2. Create Models
 3. Add and Remove Route + Documentation
 4. In seperate Files
+
+Feedback:
+1. Check if userid is available from chrome.
+2. Look into github api calls for the RSS feed.
+3. Check structure for RSS feed.
+4. Set up a route for getting RSS links for
+5. Set up a route for getting user data
+6. Look into securing endpoints so that you only have api calls from a chrome extension
+6. 
+
+Review 2: (3rd October)
+1. Complete RSS route
+2. Securing the endpoint
+3. 70 percent of the code
+4. Check for more vunerablities.
+
+Review 3:
+1. Changes to chrome extension
