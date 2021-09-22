@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 const bodyParser = require("body-parser");
+const http = require("http").Server(app);
+const rateLimit = require("express-rate-limit");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -13,6 +15,18 @@ const dotenv = require('dotenv');
 
 dotenv.config();
 
+// Limiting the no. of api calls
+app.set('trust proxy', 1);
+
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100 // limit each IP to 100 requests per windowMs
+});
+
+//  apply to all requests
+app.use(limiter);
+
+// Connecting to Mongo 
 const uri = process.env.DB_URI;
 
 mongoose.connect(uri, {
@@ -37,6 +51,12 @@ app.use((req, res, next) => {
     next();
 });
 
+// Routes
 app.use("/user", require("./api/routers/user"));
 
-app.listen(3000);
+const PORT = process.env.PORT;
+
+//Starting the server
+http.listen(PORT, function () {
+  console.log(`listening on PORT: ${PORT}`);
+});

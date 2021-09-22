@@ -13,6 +13,7 @@ exports.adduser = async (req, res) => {
         })
         .catch((err) => {
             console.log(err);
+            res.status(400);
         });
 }
 
@@ -26,5 +27,6 @@ exports.updateorg = async (req, res) => {
         })
         .catch((err) => {
             console.log(err);
+            res.status(400);
         });
 }
